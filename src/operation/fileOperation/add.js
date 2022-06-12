@@ -7,7 +7,7 @@ import { getPathToWorkDirectory } from "../../commands/getPathToWorkDirectory.js
 export const add = async (filePath) => {
   try {
     await createWriteStream(getPathFromFile(filePath));
-    console.log("Command completed");
+    console.log("Command completed!");
     console.log(getPathToWorkDirectory(cwd()));
   } catch {
     console.log("Operation failed");

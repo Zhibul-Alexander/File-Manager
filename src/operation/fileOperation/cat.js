@@ -7,7 +7,7 @@ export const cat = async (path) => {
   try {
     const fileText = await readFile(path, "utf8");
     console.log(fileText);
-    console.log("Command completed");
+    console.log("Command completed!");
     console.log(getPathToWorkDirectory(cwd()));
   } catch {
     console.log("Operation failed");

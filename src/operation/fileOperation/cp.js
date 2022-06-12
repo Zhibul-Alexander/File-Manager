@@ -15,7 +15,7 @@ export const cp = async (copyFile, newFile) => {
 
     await readFile.pipe(writeFile);
 
-    console.log("Command completed");
+    console.log("Command completed!");
     console.log(getPathToWorkDirectory(cwd()));
   } catch {
     console.log("Operation failed");
