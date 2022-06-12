@@ -1,5 +1,5 @@
-import { EOL } from "os";
 import { stdout } from "process";
+import { EOL } from "os";
 
 export const getEOL = () => {
   try {

@@ -1,5 +1,5 @@
-import { cpus } from "os";
 import { stdout } from "process";
+import { cpus } from "os";
 
 export const getCpus = () => {
   try {
