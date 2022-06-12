@@ -11,6 +11,7 @@ import {
   getSystemUsername,
   getArchitecture,
 } from "../operation/systemOperation/index.js";
+import { hash } from "../hash/index.js";
 
 const rl = readline.createInterface({ input, output });
 
@@ -77,6 +78,10 @@ export const baseSwitch = async () => {
       }
       case "--architecture": {
         getArchitecture();
+        break;
+      }
+      case "hash": {
+        hash(operation[1]);
         break;
       }
       default: {
