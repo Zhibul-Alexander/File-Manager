@@ -3,12 +3,14 @@ import process, { stdin as input, stdout as output } from "process";
 
 import { endProgram, getUsername } from "../commands/index.js";
 import { up, cd, ls } from "../navigation/index.js";
+import { cat, add } from "../operation/fileOperation/index.js";
+import { getPathToWorkDirectory } from "../commands/getPathToWorkDirectory.js";
 
 const rl = readline.createInterface({ input, output });
 
 export const baseSwitch = async () => {
   rl.on("line", (line) => {
-    const operation = line.split(" ");
+    const operation = line.toString().trim().split(" ");
     switch (operation[0]) {
       case ".exit":
       case "exit": {
@@ -25,6 +27,14 @@ export const baseSwitch = async () => {
       }
       case "ls": {
         ls();
+        break;
+      }
+      case "cat": {
+        cat(operation[1]);
+        break;
+      }
+      case "add": {
+        add(operation[1]);
         break;
       }
       default: {

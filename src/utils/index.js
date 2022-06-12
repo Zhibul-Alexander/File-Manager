@@ -1,1 +1,1 @@
-export { getPathFromFiles } from "./getPathFromFiles.js";
+export { getPathFromFile } from "./getPathFromFile.js";
