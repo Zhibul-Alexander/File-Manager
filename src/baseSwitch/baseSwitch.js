@@ -3,8 +3,7 @@ import process, { stdin as input, stdout as output } from "process";
 
 import { endProgram, getUsername } from "../commands/index.js";
 import { up, cd, ls } from "../navigation/index.js";
-import { cat, add } from "../operation/fileOperation/index.js";
-import { getPathToWorkDirectory } from "../commands/getPathToWorkDirectory.js";
+import { cat, add, rn } from "../operation/fileOperation/index.js";
 
 const rl = readline.createInterface({ input, output });
 
@@ -35,6 +34,10 @@ export const baseSwitch = async () => {
       }
       case "add": {
         add(operation[1]);
+        break;
+      }
+      case "rn": {
+        rn(operation[1], operation[2]);
         break;
       }
       default: {
