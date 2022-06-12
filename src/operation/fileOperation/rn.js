@@ -11,6 +11,7 @@ export const rn = async (oldPath, newPath) => {
 
   try {
     await rename(old, correct);
+    console.log("Command completed");
     console.log(getPathToWorkDirectory(cwd()));
   } catch {
     console.log("Operation failed");
