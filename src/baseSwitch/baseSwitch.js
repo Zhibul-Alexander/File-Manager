@@ -12,6 +12,7 @@ import {
   getArchitecture,
 } from "../operation/systemOperation/index.js";
 import { hash } from "../hash/index.js";
+import { compress, decompress } from "../zip/index.js";
 
 const rl = readline.createInterface({ input, output });
 
@@ -82,6 +83,14 @@ export const baseSwitch = async () => {
       }
       case "hash": {
         hash(operation[1]);
+        break;
+      }
+      case "compress": {
+        compress(operation[1], operation[2]);
+        break;
+      }
+      case "decompress": {
+        decompress(operation[1], operation[2]);
         break;
       }
       default: {
