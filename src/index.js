@@ -3,8 +3,8 @@ import {
   startProgram,
   getUsername,
   getPathToWorkDirectory,
-  runManager,
 } from "./commands/index.js";
+import { baseSwitch } from "./baseSwitch/index.js";
 
 const App = () => {
   try {
@@ -12,7 +12,7 @@ const App = () => {
       startProgram(getUsername()) + "\n" + getPathToWorkDirectory(homedir())
     );
 
-    runManager();
+    baseSwitch();
   } catch {
     console.log("Operation failed");
   }

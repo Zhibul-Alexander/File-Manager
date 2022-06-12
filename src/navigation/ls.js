@@ -1,9 +1,10 @@
-import { readdir } from "fs";
-import path from "path";
+import { readdir } from "fs/promises";
+import { cwd } from "process";
 
-export const ls = (pathDirectory) => {
+export const ls = async () => {
   try {
-    console.log(readdir(path.join(pathDirectory)));
+    const array = await readdir(cwd());
+    console.log(array);
   } catch {
     console.log("Operation failed");
   }
